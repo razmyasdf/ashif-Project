@@ -18,3 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('vehicle/create','VehicleController@create')->middleware('auth');
+Route::get('show/{vehicle}','VehicleController@show')->middleware('auth');
+Route::post('image/add/{vehicle}','ImageController@add')->middleware('auth');
