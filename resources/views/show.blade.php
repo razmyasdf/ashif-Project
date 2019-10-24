@@ -10,10 +10,11 @@
                 <div class="card-header bg-primary"><h1>{{$vehicle->vcn}}</h1></div>
 
                     <div class="card-body">
-                    <form action="/image/add/{{$vehicle->vcn}}" class="form-group" method="POST" enctype="multipart/form-data">
+                    <form action="/image/save/{{$vehicle->vcn}}" class="form-group" method="POST" enctype="multipart/form-data" accept-charset="utf-8">
                         @csrf
                                 <label for="">Add Image for Vehicle</label>
-                                <input type="file" name="img" class="form-control-file" id="img" required>
+                              <!--  <input type="file" name="img[]" class="form-control-file" id="img" required> -->
+                                <input type='file' id="image" name="img[]" multiple accept=".png, .jpg, .jpeg" />
 
                                 <button type="submit" class="btn btn-primary">add</button>
                             </form>
